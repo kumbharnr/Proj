@@ -7,14 +7,14 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class CartDetailsService {
 
   public cartItems:any=[];
-  public productList:any = [];
+  public productList= new BehaviorSubject<any>([]) ;
 
   constructor() { }
 
   //we need to create getter and setter method to get the data
   //getter method
-  getProduct():Observable<any>{
-    return this.productList;
+  getProduct(){
+    return this.productList.asObservable();
   }
 
   //setter method
