@@ -1,0 +1,28 @@
+<app-header></app-header>
+<!-- <app-child></app-child> -->
+<router-outlet></router-outlet>
+
+<h1>Task</h1>
+<input type="text" placeholder="Enter Some text " #task>
+<br><br>
+<button (click)="addTask(task.value)">Add Task</button>
+
+<ul *ngFor="let item of list">
+  <li>{{item.name}} <button (click)="removeItem(item.id)">remove</button></li>
+</ul>
+
+<form [formGroup]="loginForms" (ngSubmit)="userLogins()">
+  <span *ngIf="userss && userss.invalid && userss.touched">Required filed</span>
+  <input type="text" placeholder="enter username" formControlName="userss"><br>
+  <span *ngIf="passwords && passwords.invalid && passwords.touched">Required filed</span><br>
+
+  <input type="password" placeholder="enter password" formControlName="passwords">
+  <button [disabled]="loginForms.invalid">login</button>
+</form>
+
+<!-- <form #loginForm="ngForm" (ngSubmit)=userLogin(loginForm.value)>
+  <input type="text" ngModel placeholder="Enter username" name="user"><br>
+  <input type="password" ngModel placeholder="enter password" name="password"><br>
+
+  <button>login</button>
+</form> -->

@@ -1,0 +1,27 @@
+.myresto-img{
+    width: 50%;
+    height: 500px;
+    margin-left: 300px;
+
+}
+
+@media screen and (max-width:846px){
+    .myresto-img{
+        margin-left: 180px;
+    }
+    
+}
+@media screen and (max-width:568px){
+    .myresto-img{
+        margin-left: 150px;
+    }
+    
+}
+.about-text{
+    margin-top: 0;
+}
+.container p{
+    text-align: center;
+    margin: 200px;    
+    
+}

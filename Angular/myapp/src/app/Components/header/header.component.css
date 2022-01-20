@@ -1,0 +1,22 @@
+nav img{
+    width: 5%;
+    border: 1px solid white;
+    border-radius: 40px;
+}
+
+nav{
+    background: skyblue;
+}
+ul{
+    float: right;
+    list-style-type: none;
+    margin-right: 30px;
+    position:static;
+}
+ul li{
+    padding: 20px;
+    margin-top: 0.5px;    display: inline-block;
+}
+a{
+    text-decoration: none;
+}

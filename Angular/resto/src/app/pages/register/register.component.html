@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- partial:index.partial.html -->
+    <form [formGroup]="registerForm" #userform="ngForm" (ngSubmit)="onSubmit()">
+      <div class="box-form">
+        <div class="left">
+          <div class="overlay">
+            <h3>Unexpected guest,Cooking gone wrong.</h3>
+            <p>
+              Order food from favourite restaurants near you. <br />
+              <!-- {{registerForm.value | json}} -->
+            </p>
+            <span>
+              <p>login with social media</p>
+              <!-- <a href="#"><i class="fa-google-plus" aria-hidden="true"></i></a> -->
+              <a href="#"
+                ><i class="fa fa-twitter" aria-hidden="true"></i> register with
+                Twitter</a
+              >
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group right mt-4">
+          <h5 class="mb-5">Register</h5>
+
+          <div class="inputs">
+            <input
+              class="form-control"
+              formControlName="email"
+              type="text"
+              pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+              name="email"
+              id="emails"
+              placeholder="email id "
+              [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+            />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">email is required</div>
+            </div>
+            <!-- <div *ngIf="names.errors && (names.invalid || names.touched)">
+               <p *ngIf="names.errors.required" style="color: red">
+                email is required
+              </p> 
+              <p *ngIf="names.errors.pattern" style="color: red">
+                Enter valid Email
+              </p>
+
+            </div> -->
+
+            <br />
+            <input
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.pass.errors }"
+              type="password"
+              formControlName="pass"
+              name="pass"
+              placeholder="Password"
+            />
+            <div *ngIf="submitted && f.pass.errors" class="invalid-feedback">
+              <div *ngIf="f.pass.errors.required">
+                password is required and greater than 4 digits
+              </div>
+            </div>
+            <br />
+            <input
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }"
+              type="text"
+              formControlName="mobile"
+              pattern="^\d{10}"
+              name="mobile"
+              placeholder="Mobile number"
+            />
+            <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+              <div *ngIf="f.mobile.errors.required">
+                mobile is required and must be 10 digits
+              </div>
+            </div>
+            <!-- <div *ngIf="mobile.errors && (mobile.invalid || mobile.touched)"> -->
+            <!-- <p *ngIf="mobile.errors.required && mobile.errors.touched" style="color: red">
+                Phone number is required
+              </p> -->
+            <!-- <p *ngIf="mobile.errors.pattern" style="color: red">
+                phone number must 10 digits
+              </p> -->
+            <!-- </div> -->
+          </div>
+          <br />
+          <button class="mb-4" type="submit">Register</button>
+          <br />
+          <p>already have an account? <a routerLink="/login">Login here</a></p>
+          {{successMsg}}
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

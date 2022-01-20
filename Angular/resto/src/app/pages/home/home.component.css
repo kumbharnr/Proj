@@ -1,0 +1,97 @@
+.banner{
+    background-image: url('../../../assets/images/banner.jpg');
+    height: 650px;
+    background-position: center top;
+    background-size: cover;
+    opacity: 0.9;
+    /* margin-left: 15px;
+    margin-right: 15px; */
+}
+.content{
+    top: 50%;
+    left: 10%;
+    position: absolute;
+}
+
+.content h1{
+    color: rgb(12, 3, 3);
+    font-size: 60px;
+    font-weight: bold;
+    
+}
+.content a{
+     text-decoration: none;
+    background-color: rgb(12, 10, 10);
+    color: var(--primary-color);
+    padding: 15px 20px;
+    border: 2px;
+    border-radius: 15px;
+    margin-top: 20px;
+
+}
+.content a:hover{
+    background-color:rgb(39, 87, 27);
+    color: #fff;
+}
+.stepBox{
+    background-color: #000;
+    padding: 20px 20px;
+    border-radius: 5px;
+    text-align: center;
+   
+}
+.stepBox h1{
+    color: var(--primary-color);
+    font-size: 50px;
+    font-weight: bold;
+}
+.stepBox p{
+    color: #fff;
+    font-size: 20px;
+    /* font-style: italic; */
+}
+
+.highlight{
+    color:rgb(29, 139, 25);
+    text-decoration: underline; 
+    font-weight: bold;
+}
+.foodbox{
+    padding: 10px 5px;
+    /* display: flex; */
+}
+
+.foodbox img{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: initial;
+
+}
+.foodbox img:hover{
+    transform: scale(0.9);
+}
+.foodbox h1{
+    flex-direction: row;
+    font-size: 20px;
+    font-weight: bold;
+}
+.btn{
+    text-decoration: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #000;
+}
+.btn:hover{
+    background-color: #fff;
+}
+
+@media screen and (max-width:700px){
+    .banner{
+        height: 800px;
+        /* background-size: cover; */
+    }
+}

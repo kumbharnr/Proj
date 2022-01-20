@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login Page in HTML with CSS Code Example</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="box-form">
+        <div class="left">
+          <div class="overlay">
+            <h3>Unexpected guest,Cooking gone wrong.</h3>
+            <p>Order food from favourite restaurants near you.</p>
+            <span>
+              <p>login with social media</p>
+              <!-- <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a> -->
+              <a href="#"
+                ><i class="fa fa-twitter" aria-hidden="true"></i> Login with
+                Twitter</a
+              >
+            </span>
+          </div>
+        </div>
+
+        <div class="right mt-4">
+          <h5 class="mb-5">Login</h5>
+
+          <div class="form-group inputs">
+            <input
+            formControlName="email"
+              class="form-control"
+              name="email"
+              type="text"
+              placeholder="email or username"
+              pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+              [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+
+            />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">email is required</div>
+            </div>
+            <!-- <p *ngIf="username.touched && username.invalid" style="color: red">
+              Field required
+            </p> -->
+            <br />
+            <input
+            formControlName="pass"
+              class="form-control"
+              name="pass"
+              type="password"
+              placeholder="password"
+              [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+
+            />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">Password is required</div>
+            </div>
+            <!-- <p *ngIf="password.touched && password.invalid" style="color: red">
+              Field required
+            </p> -->
+          </div>
+
+          <br /><br />
+
+          <br />
+          <button class="mb-5">Login</button>
+          <p>
+            Don't have an account?
+            <a routerLink="/register">Creat Your Account</a> it takes less than
+            a minute
+          </p>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

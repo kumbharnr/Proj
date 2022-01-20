@@ -1,0 +1,13 @@
+.highlight{
+    font-weight: bold;
+    font-size: 30px;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+
+    /* padding-left: 400px; */
+
+
+}
