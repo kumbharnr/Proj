@@ -11,6 +11,8 @@ app.use(cors());
 app.use(shopRoutes)
 app.get('/getFoodDetails',shopRoutes)
 
+// app.post('/storedata')
+
 app.listen(port,()=>{
     console.log("listening at 8000");
 })
